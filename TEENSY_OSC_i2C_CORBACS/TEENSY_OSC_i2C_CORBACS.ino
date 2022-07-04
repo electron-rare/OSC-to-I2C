@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------------------------------------------------------------------------
-  OSC to I2C CORBACS Show  pour les amis nos morts         v0.1a 06/2022   06/2022
+  OSC to I2C CORBACS Show pour les amis nos morts         v0.1a 06/2022   06/2022
   https://www.facebook.com/LesAmisNosMorts/
   https://lesamisnosmorts.fr/
   https://www.youtube.com/watch?v=2guq3Z296mI&list=PLyRucERHaznPcJ69G39vllQ96x3izfdkT
@@ -16,7 +16,7 @@
 
 #define DEBUG 0 // 1 pour activer le debug serie
 
-// ethernet et OSC
+// ethernet
 #include <SPI.h>
 #include <NativeEthernet.h>
 #include <NativeEthernetUdp.h>
