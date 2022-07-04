@@ -15,7 +15,6 @@
 #include "config.h"  // fichier de Définition des valeur de servo
 
 #define DEBUG 0 // 1 pour activer le debug serie
-#define DEBUG 0 // 1 pour activer le mode DEBUG en debug
 
 // ethernet et OSC
 #include <SPI.h>
@@ -37,14 +36,9 @@ const int osc_server_port  = 10000;
 //----------------------------------------------------
 
 
-
-
-
 // valeur min et max OSC pour mappage des valeurs vers angle SERVO
 #define min_value 0
 #define max_value 1000
-
-
 
 // I2C et carte PWM(servo)
 #include <Wire.h>
@@ -88,8 +82,6 @@ int servo_boot[nb_servo] = {
   BOOT0  , BOOT1 , BOOT2 , BOOT3 , BOOT4 , BOOT5 , BOOT6 , BOOT7 , BOOT8 , BOOT9 , BOOT10  , BOOT11  , BOOT12  , BOOT13  , BOOT14  , BOOT15  , BOOT16  , BOOT17  , BOOT18  , BOOT19  , BOOT20  , BOOT21  , BOOT22  , BOOT23  , BOOT24  , BOOT25  , BOOT26  , BOOT27  , BOOT28  , BOOT29  , BOOT30  , BOOT31  , BOOT32  , BOOT33  , BOOT34  , BOOT35  , BOOT36  , BOOT37  , BOOT38  , BOOT39  , BOOT40  , BOOT41  , BOOT42  , BOOT43  , BOOT44  , BOOT45  , BOOT46  , BOOT47  , BOOT48
 };
 
-
-
 void setup() {
 
   //disable sd card
@@ -129,9 +121,9 @@ void setup() {
 
 #ifdef  DEBUG
   //Debug Mode enable in case DEBUG equal 1
-  //Serial.begin(115200);
+  Serial.begin(115200);
   delay(100);
-  //Serial.println("CORBAC I2C START");
+  Serial.println("CORBAC I2C START");
 
 #endif
 
@@ -139,11 +131,11 @@ void setup() {
 
 
   // print your local IP address:
-  //Serial.print("Arduino IP address: ");
-  //Serial.println(Ethernet.localIP());
-  //Serial.print("OSC Port ");
-  //Serial.println(osc_server_port);
-  //Serial.println("Setup done.");
+  Serial.print("Arduino IP address: ");
+  Serial.println(Ethernet.localIP());
+  Serial.print("OSC Port ");
+  Serial.println(osc_server_port);
+  Serial.println("Setup done.");
 
 }
 
