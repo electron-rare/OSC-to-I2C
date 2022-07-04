@@ -9,10 +9,12 @@
   
   
   Conception artistique : 
+  
   Guillaume dalin
   lesamisnosmorts@gmail.com / +33676745128
   
   Code / électronique :
+  
   Clément SAILLANT / l'électron rare
     c.saillant@gmail.com / +33625334420
     
