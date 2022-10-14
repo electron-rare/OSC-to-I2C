@@ -253,6 +253,19 @@ void setup()
   lcd.print("INIT OK");
 
 }
+// Fonction de lecture des touches
+int read_LCD_buttons()
+{
+  adc_key_in = analogRead(0);   // Lecture du port analogique
+  // Les valeurs qui suivent doivent être adaptées au shield
+  if (adc_key_in > 900) return btnNONE;   // En principe 1023 quand aucune touche n'est pressée
+  if (adc_key_in < 50)   return btnRIGHT;     // 0
+  if (adc_key_in < 195)  return btnUP;        // 99
+  if (adc_key_in < 380)  return btnDOWN;      // 255
+  if (adc_key_in < 555)  return btnLEFT;      // 409
+  if (adc_key_in < 790)  return btnSELECT;    // 640
+  return btnNONE;
+}
 
 void loop()
 {
@@ -393,16 +406,4 @@ void loop()
 }
 
 
-// Fonction de lecture des touches
-int read_LCD_buttons()
-{
-  adc_key_in = analogRead(0);   // Lecture du port analogique
-  // Les valeurs qui suivent doivent être adaptées au shield
-  if (adc_key_in > 900) return btnNONE;   // En principe 1023 quand aucune touche n'est pressée
-  if (adc_key_in < 50)   return btnRIGHT;     // 0
-  if (adc_key_in < 195)  return btnUP;        // 99
-  if (adc_key_in < 380)  return btnDOWN;      // 255
-  if (adc_key_in < 555)  return btnLEFT;      // 409
-  if (adc_key_in < 790)  return btnSELECT;    // 640
-  return btnNONE;
-}
+
