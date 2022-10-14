@@ -1,6 +1,3 @@
-/*// -------------------------------------------------------------------------------------------------------------------------------------------*/
-// Définition valeur servo, utilisé le fichier excel pour modifier les valeur :
-// ---------------------------------------------------------------------------------------------------------------------------------------------*/
 #define  MIN0  230
 #define MAX0  530
 #define BOOT0 0
@@ -52,8 +49,8 @@
 #define MIN16 220
 #define MAX16 510
 #define BOOT16  0
-#define MIN17 180
-#define MAX17 510
+#define MIN17 150
+#define MAX17 460
 #define BOOT17  0
 #define MIN18 0
 #define MAX18 0
@@ -79,11 +76,11 @@
 #define MIN25 0
 #define MAX25 0
 #define BOOT25  0
-#define MIN26 220
-#define MAX26 510
+#define MIN26 250
+#define MAX26 460
 #define BOOT26  0
 #define MIN27 210
-#define MAX27 510
+#define MAX27 450
 #define BOOT27  0
 #define MIN28 100
 #define MAX28 240
@@ -106,8 +103,8 @@
 #define MIN34 100
 #define MAX34 190
 #define BOOT34  0
-#define MIN35 100
-#define MAX35 440
+#define MIN35 200
+#define MAX35 560
 #define BOOT35  -90
 #define MIN36 0
 #define MAX36 0

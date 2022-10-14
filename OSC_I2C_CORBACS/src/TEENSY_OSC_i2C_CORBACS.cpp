@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------------------------------------------------------------------------
-  OSC to I2C CORBACS Show  pour les amis nos morts         v0.1a 06/2022   06/2022
+  OSC to I2C CORBACS Show pour les amis nos morts         v0.1a 06/2022   06/2022
   https://www.facebook.com/LesAmisNosMorts/
   https://lesamisnosmorts.fr/
   https://www.youtube.com/watch?v=2guq3Z296mI&list=PLyRucERHaznPcJ69G39vllQ96x3izfdkT
@@ -16,10 +16,10 @@
 
 #define DEBUG 0 // 1 pour activer le debug serie
 
-// ethernet et OSC
+// ethernet
 #include <SPI.h>
 #include <NativeEthernet.h>
-#include <EthernetUdp.h>
+#include <NativeEthernetUdp.h>
 
 //Use youre mac and ip here---------------------------
 byte mac[] = { 0x90, 0xA2, 0xDA, 0x0E, 0x9B, 0x7F    };
@@ -36,9 +36,14 @@ const int osc_server_port  = 10000;
 //----------------------------------------------------
 
 
+
+
+
 // valeur min et max OSC pour mappage des valeurs vers angle SERVO
 #define min_value 0
 #define max_value 1000
+
+
 
 // I2C et carte PWM(servo)
 #include <Wire.h>
@@ -82,12 +87,17 @@ int servo_boot[nb_servo] = {
   BOOT0  , BOOT1 , BOOT2 , BOOT3 , BOOT4 , BOOT5 , BOOT6 , BOOT7 , BOOT8 , BOOT9 , BOOT10  , BOOT11  , BOOT12  , BOOT13  , BOOT14  , BOOT15  , BOOT16  , BOOT17  , BOOT18  , BOOT19  , BOOT20  , BOOT21  , BOOT22  , BOOT23  , BOOT24  , BOOT25  , BOOT26  , BOOT27  , BOOT28  , BOOT29  , BOOT30  , BOOT31  , BOOT32  , BOOT33  , BOOT34  , BOOT35  , BOOT36  , BOOT37  , BOOT38  , BOOT39  , BOOT40  , BOOT41  , BOOT42  , BOOT43  , BOOT44  , BOOT45  , BOOT46  , BOOT47  , BOOT48
 };
 
+
+
 void setup() {
 
-  //disable sd card
-  pinMode(4, OUTPUT);
-  digitalWrite(4, HIGH);
-  delay(1);
+#ifdef  DEBUG
+  //Debug Mode enable in case DEBUG equal 1
+  //Serial.begin(115200);
+  //delay(5000);
+  //Serial.println("CORBAC I2C START");
+
+#endif
 
   // start the Ethernet connection:
   Ethernet.begin(mac, ip);
@@ -119,23 +129,16 @@ void setup() {
     }
   }
 
-#ifdef  DEBUG
-  //Debug Mode enable in case DEBUG equal 1
-  Serial.begin(115200);
-  delay(100);
-  Serial.println("CORBAC I2C START");
-
-#endif
 
 
 
 
   // print your local IP address:
-  Serial.print("Arduino IP address: ");
-  Serial.println(Ethernet.localIP());
-  Serial.print("OSC Port ");
-  Serial.println(osc_server_port);
-  Serial.println("Setup done.");
+  //Serial.print("Arduino IP address: ");
+  //Serial.println(Ethernet.localIP());
+  //Serial.print("OSC Port ");
+  //Serial.println(osc_server_port);
+  //Serial.println("Setup done.");
 
 }
 
