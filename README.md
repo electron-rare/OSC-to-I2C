@@ -1,5 +1,6 @@
  OSC to I2C CORBACS Show  pour les amis nos morts         v0.1a 06/2022   06/2022
- 
+
+ for teensy or ESP
   https://www.facebook.com/LesAmisNosMorts/
   
   https://lesamisnosmorts.fr/
